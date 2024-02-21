@@ -12,15 +12,26 @@
         <div class="main__container">
             <div class="main__content">
                 <h1>
-
-
+                    <i class ="fa-solid fa-lock"></i>
+                    Password Manager
+                    <i class ="fa-solid fa-lock"></i>
                 </h1>
-                <p>
-
-                </p>
-
-
+                <p> Input your usernames and passwords here</p>
             </div>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="platform">Platform:</label>
+            <input type="text" id="platform" name="platform" required>
+
+            <button class="main__button" onclick="saveAccount()">Save Account</button>
         </div>
     </div>
     
