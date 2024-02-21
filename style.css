@@ -31,7 +31,6 @@ body
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 700;
-    margin-bottom: -5px;
     padding-top: 10px;
     background-color: #131313;
     background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
@@ -45,7 +44,7 @@ body
 .main__content p
 {
     font-size: 1rem;
-    margin-top: 0.5rem;
+    margin-top: -15px;
 }
 
 .main__content label
@@ -110,6 +109,7 @@ body
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 700;
+    
     padding-top: 10px;
     background-color: #131313;
     background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
@@ -118,6 +118,12 @@ body
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+}
+
+.accounts__content p
+{
+    font-size: 1rem;
+    margin-top: -15px;
 }
 
 /*PLATFORM LINKING CSS SECTION*/
@@ -151,4 +157,10 @@ body
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+}
+
+.platforms__content p
+{
+    font-size: 1rem;
+    margin-top: -15px;
 }
