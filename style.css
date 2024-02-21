@@ -72,3 +72,14 @@ body
     transition: all 0.35s;
     outline: none;
 }
+
+.main__button:hover
+{
+    background-color: lightgreen;
+    transition: all 0.3 ease;
+}
+
+.main__button:active
+{
+    background-color: darkgreen;
+}
