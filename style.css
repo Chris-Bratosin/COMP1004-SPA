@@ -10,3 +10,39 @@ body
 
 /*MAIN COMPARTMENT (PASSWORD MANAGER) CSS SECTION*/
 
+.main
+{
+    background-color: lightgray;
+    border-radius: 8px;
+}
+
+.main__container
+{
+    max-width: 600px;
+    max-height: 600px;
+    height: 455px;
+    padding-left: 0.5rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+
+.main__content h1
+{
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    background-color: #131313;
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content p
+{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
