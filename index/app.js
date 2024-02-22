@@ -9,6 +9,7 @@ function MaskPassword(pass)
 }
 
 
+// ! THIS NEEDS TO BE FINISHED AND WORKINGS BY 28TH FEBRUARY
 
 function saveAccount()
 {
@@ -17,7 +18,7 @@ function saveAccount()
     const accounts = saveAccount();
     if (username && password)
     {
-        
+            
 
         accounts.push({username, password});
         localStorage.setItem('accounts', JSON.stringify(accounts));
@@ -26,3 +27,9 @@ function saveAccount()
         clearForm();
     }
 }
+
+// TODO: PASSWORD STRENGTH CHECKING
+// TODO: ACCOUNT DELETION BUTTON
+// TODO: FILE SAVING AND FILE OPENING USING JSON 
+// TODO: LIGHT AND DARK THEME TOGGLE
+// TODO: ZOOM TOGGLE
