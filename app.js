@@ -12,5 +12,17 @@ function MaskPassword(pass)
 
 function saveAccount()
 {
-    const accounts = document.getElementById("accounts");
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const accounts = saveAccount();
+    if (username && password)
+    {
+        
+
+        accounts.push({username, password});
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+
+        alert('Account saved successfully!');
+        clearForm();
+    }
 }
