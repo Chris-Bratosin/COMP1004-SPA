@@ -117,25 +117,25 @@ body
 [data-theme="light"]
 {
     --color-bg: #ffffff;
-    --color-fg: #000000;
+    --color-fg: #4e4d4d;
 }
 
 [data-theme="dark"]
 {
-    --color-bg: #000000;
+    --color-bg: #4e4d4d;
     --color-fg: #ffffff;
 }
 
 body 
 {
     background-color: var(--color-bg);
-    color: var (--color-fg);
+    color: var(--color-fg);
     min-height: 100vh;
 }
 
 .color__theme
 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0.5rem 1rem;
     transition: all var(--global-transition-time) ease-in-out;
@@ -143,7 +143,7 @@ body
     border-radius: 4px;
     cursor: pointer;
     color: var(--color-bg);
-    background-color: var(--color-bg);
+    background-color: var(--color-fg);
 }   
 
 

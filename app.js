@@ -61,7 +61,7 @@ e.g. when dark is on, button should say 'switch to light' and vice versa with li
 
 function updateButtonText({buttonEl, isDark})
 {
-    const changeSetting = isDark ? "Change theme to light" : "Change"
+    const changeSetting = isDark ? "Change to light theme" : "Change to dark theme"
     buttonEl.setAttribute("aria-label", changeSetting);
     buttonEl.innerText = changeSetting;
 }
@@ -79,7 +79,23 @@ the user clicks the button toggle*/
 
 const button = document.querySelector("[data-theme-toggle");
 const localStorageTheme = localStorage.getItem("theme");
-const systemSettingsDark
+const systemSettingsDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+let currentThemeSetting = themeSetting({localStorageTheme, systemSettingsDark})
+
+updateButtonText({buttonEl : button, isDark: currentThemeSetting === "dark"});
+updateHtmlTag({theme : currentThemeSetting});
+
+button.addEventListener("click", (event) => 
+{
+    const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+
+        localStorage.setItem("theme", newTheme);
+        updateButtonText({buttonEl: button, isDark: newTheme === "dark"});
+        updateHtmlTag({theme: newTheme});
+
+        currentThemeSetting = newTheme;
+});
 
 // TODO: PASSWORD STRENGTH CHECKING
 // TODO: ACCOUNT DELETION BUTTON
