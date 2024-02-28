@@ -28,7 +28,11 @@ function saveAccount()
     }
 }
 
-
+function darkMode()
+{
+    var element = document.body;
+    element.classList.toggle("dark__mode"); 
+}
 
 // TODO: PASSWORD STRENGTH CHECKING
 // TODO: ACCOUNT DELETION BUTTON

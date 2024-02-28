@@ -85,7 +85,31 @@ body
     background-color: darkgreen;
 }
 
+.dark__mode
+{
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 4px;
+    color: #131313;
+    margin-top: 5rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
 
+.dark__mode:hover
+{
+    background-color: white;
+    transition: all 0.3 ease;
+}
+
+.dark__mode:active
+{
+    background-color: darkgreen;
+}
 
 
 /*SAVED ACCOUNTS CSS SECTION*/
