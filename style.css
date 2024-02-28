@@ -131,6 +131,8 @@ body
     background-color: var(--color-bg);
     color: var(--color-fg);
     min-height: 100vh;
+    width: 600px;
+    margin-left: 475px;
 }
 
 .color__theme
