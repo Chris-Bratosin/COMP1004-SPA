@@ -28,11 +28,13 @@ function saveAccount()
     }
 }
 
-function darkMode()
+// ! NEEDS TO TURN EVERYTHING LIGHT / DARK AND NOT ZOOM OUT THE PAGE
+/*function darkMode()
 {
     var element = document.body;
     element.classList.toggle("dark__mode"); 
 }
+*/
 
 // TODO: PASSWORD STRENGTH CHECKING
 // TODO: ACCOUNT DELETION BUTTON
