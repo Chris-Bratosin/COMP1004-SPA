@@ -36,6 +36,51 @@ function saveAccount()
 }
 */
 
+/*Creating the color theme toggle
+first going to find the system setting for the user to have a default theme (dark/light) and if button is clicked
+switch to the opposite theme and revert if clicked again*/
+
+function themeSetting({localStorageTheme, systemSettingsDark})
+{
+    if (localStorageTheme !== null)
+    {
+        return localStorageTheme;
+    }
+
+    if (systemSettingsDark.matches)
+    {
+        return "dark";
+    }
+
+    return "light";
+}
+
+/*creating function to update the buttons text when clicked so that it matches with what it should be.
+e.g. when dark is on, button should say 'switch to light' and vice versa with light, it should be
+'switch to dark*/ 
+
+function updateButtonText({buttonEl, isDark})
+{
+    const changeSetting = isDark ? "Change theme to light" : "Change"
+    buttonEl.setAttribute("aria-label", changeSetting);
+    buttonEl.innerText = changeSetting;
+}
+
+/* Creating function to update the html tag i set earlier after the lang=en tag.*/
+
+function updateHtmlTag({theme})
+{
+    document.querySelector("html").setAttribute("data-theme", theme);
+}
+
+/*finally, going to get the system settings for when the page loads then figure the current site settings
+and update the theme depending on what the users needs are. going to make use of an event listener for when 
+the user clicks the button toggle*/
+
+const button = document.querySelector("[data-theme-toggle");
+const localStorageTheme = localStorage.getItem("theme");
+const systemSettingsDark
+
 // TODO: PASSWORD STRENGTH CHECKING
 // TODO: ACCOUNT DELETION BUTTON
 // TODO: FILE SAVING AND FILE OPENING USING JSON 
