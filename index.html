@@ -26,16 +26,15 @@
            
 
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" placeholder="Enter Your Username" required>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
 
             <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Your Password" required>
 
-            <label for="platform">Platform:</label>
-            <input type="text" id="platform" name="platform" required>
+            
             </div>
             <button class="main__button" onclick="saveAccount()">Save Account</button>
             <!--<button class = "dark__mode" onclick="darkMode()">Toggle Dark Mode</button> -->
@@ -56,6 +55,7 @@
                     <i class="fa-solid fa-user"></i>
                 </h2>
                 <p>Saved accounts will appear here, improvement suggestions may be displayed here </p>
+                <p id="userDetails"></p>
             </div>
         </div>
     </div>

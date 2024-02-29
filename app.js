@@ -8,9 +8,17 @@ function MaskPassword(pass)
     return str
 }
 
+//document.getElementById("main__button").addEventListener("click", saveAccount)
+
+
+function saveAccount()
+{
+    
+}
+
 
 // ! THIS NEEDS TO BE FINISHED AND WORKINGS BY 28TH FEBRUARY
-
+/*
 function saveAccount()
 {
     const username = document.getElementById('username').value;
@@ -40,14 +48,8 @@ function saveAccount()
         accountsList.appendChild(passwordItem);
     });
 }
-
-// ! NEEDS TO TURN EVERYTHING LIGHT / DARK AND NOT ZOOM OUT THE PAGE
-/*function darkMode()
-{
-    var element = document.body;
-    element.classList.toggle("dark__mode"); 
-}
 */
+
 
 /*Creating the color theme toggle
 first going to find the system setting for the user to have a default theme (dark/light) and if button is clicked
