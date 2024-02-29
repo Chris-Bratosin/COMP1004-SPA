@@ -26,6 +26,19 @@ function saveAccount()
         alert('Account saved successfully!');
         clearForm();
     }
+
+    savedAccounts.forEach((accounts, index) => 
+    {
+        const usernameItem = document.createElement('li');
+        usernameItem.textContent = `Username: ${accounts.username}`;
+        //appending the username to the list
+        accountsList.appendChild(usernameItem);
+
+        const passwordItem = document.createElement('li');
+        passwordItem.textContent = `Password: ${accounts.username}`;
+        //appending the username to the list
+        accountsList.appendChild(passwordItem);
+    });
 }
 
 // ! NEEDS TO TURN EVERYTHING LIGHT / DARK AND NOT ZOOM OUT THE PAGE
