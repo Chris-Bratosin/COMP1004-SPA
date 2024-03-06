@@ -1,4 +1,4 @@
-<reference path="../typings/globals/jquery/index.d.ts" />
+
 function MaskPassword(pass)
 {
     let str = ""
@@ -112,6 +112,8 @@ button.addEventListener("click", (event) =>
 
         currentThemeSetting = newTheme;
 });
+
+
 
 // TODO: PASSWORD STRENGTH CHECKING
 // TODO: ACCOUNT DELETION BUTTON
