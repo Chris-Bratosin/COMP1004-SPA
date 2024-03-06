@@ -1,3 +1,4 @@
+<reference path="../typings/globals/jquery/index.d.ts" />
 function MaskPassword(pass)
 {
     let str = ""
@@ -22,7 +23,7 @@ function saveAccount()
 function saveAccount()
 {
     const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const password = document.getElementById('password').value;npg 
     const accounts = saveAccount();
     if (username && password)
     {
