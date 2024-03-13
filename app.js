@@ -1,4 +1,4 @@
-const { get } = require("jquery");
+//const { get } = require("jquery");
 
 function MaskPassword(pass)
 {
@@ -10,18 +10,14 @@ function MaskPassword(pass)
     return str
 }
 
-//document.getElementById("main__button").addEventListener("click", saveAccount)
-
 
 function saveAccount()
 {
-   
-}
-
-function loadAccounts()
-{
     
 }
+
+
+
 
 
 /*Creating the color theme toggle
