@@ -13,7 +13,43 @@ function MaskPassword(pass)
 
 function saveAccount()
 {
-    
+    //getting the inputs from the text boxes
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    //checking that the fields arent empty
+    if (username !== '' && password !== '')
+    {
+        const savedAccountContainer = document.createElement('div');
+        savedAccountContainer.classList.add('saved-account');
+
+        //create elements to display the username and password
+        const usernameOutput = document.createElement('p');
+        usernameOutput.textContent = `Username: ${username}`;
+        const passwordOutput = document.createElement('p');
+        passwordOutput.textContent = `Password: ${MaskPassword(password)}`;
+
+        //appending the details to saved accounts section
+
+        savedAccountContainer.appendChild(usernameOutput);
+        savedAccountContainer.appendChild(passwordOutput);
+
+        const savedAccountsSection = document.querySelector('.accounts__content');
+        savedAccountsSection.appendChild(savedAccountContainer);
+
+        //empty the input fields after and account has been saved
+        usernameInput.value = '';
+        passwordInput.value = '';
+
+        //notifying user that the account has been saved
+        alert('Account has been saved');
+    }
+    else
+    {
+        alert('Please enter username and password');
+    }
 }
 
 
