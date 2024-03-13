@@ -15,6 +15,7 @@ function MaskPassword(pass)
 
 
 
+
 /*Creating the color theme toggle
 first going to find the system setting for the user to have a default theme (dark/light) and if button is clicked
 switch to the opposite theme and revert if clicked again*/

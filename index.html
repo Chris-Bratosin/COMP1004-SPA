@@ -26,21 +26,27 @@
            
 
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter Your Username" required>
+            <input id="username" type="text" placeholder="Enter Your Username" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+            <label for="password">Password:</label> 
+            <input id="password" type="text" placeholder="Enter Your Password" required>
 
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Your Password" required>
+            <!--<label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Your Password" required> -->
 
             
             </div>
+
+            <!-- ! Save Account button -->
             <button class="main__button" onclick="saveAccount()">Save Account</button>
-            <!--<button class = "dark__mode" onclick="darkMode()">Toggle Dark Mode</button> -->
+
+
+            <!-- ! Light/Dark theme switcher-->
             <button type="button" class="color__theme"
             data-theme-toggle 
-            aria-label="Change to light theme">Change to light theme</button>
+            aria-label="Change to light theme">Change to light theme</button>   
+
+
         </div>
     </div>
     
@@ -61,6 +67,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
     <script src="app.js"></script>
+    
     
 </body>
 </html>
