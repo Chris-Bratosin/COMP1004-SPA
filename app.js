@@ -11,60 +11,6 @@ function MaskPassword(pass)
 }
 
 
-function saveAccount()
-{
-    //getting the inputs from the text boxes
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    //checking that the fields aren't empty
-    if (username !== '' && password !== '')
-    {
-        const savedAccountContainer = document.createElement('div');
-        savedAccountContainer.classList.add('saved-account');
-
-        //create elements to display the username and password
-        const usernameOutput = document.createElement('p');
-        usernameOutput.textContent = `Username: ${username}`;
-        const passwordOutput = document.createElement('p');
-        passwordOutput.textContent = `Password: ${MaskPassword(password)}`;
-
-        //delete button to remove unwanted accounts
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('delete-button');
-
-        //adding an event listener for the button
-        deleteButton.addEventListener('click', () => 
-        {
-            //removing an account if the button is clicked
-            savedAccountContainer.remove(); 
-        })
-
-        //appending the details to saved accounts section
-
-        savedAccountContainer.appendChild(usernameOutput);
-        savedAccountContainer.appendChild(passwordOutput);
-        savedAccountContainer.appendChild(deleteButton);
-
-        const savedAccountsSection = document.querySelector('.accounts__content');
-        savedAccountsSection.appendChild(savedAccountContainer);
-
-        //empty the input fields after and account has been saved
-        usernameInput.value = '';
-        passwordInput.value = '';
-
-        //notifying user that the account has been saved
-        alert('Account has been saved');
-    }
-    else
-    {
-        alert('Please enter username and password');
-    }
-}
-
 
 
 
