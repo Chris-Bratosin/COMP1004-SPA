@@ -19,7 +19,7 @@ function saveAccount()
     const username = usernameInput.value.trim();
     const password = passwordInput.value.trim();
 
-    //checking that the fields arent empty
+    //checking that the fields aren't empty
     if (username !== '' && password !== '')
     {
         const savedAccountContainer = document.createElement('div');
@@ -31,10 +31,23 @@ function saveAccount()
         const passwordOutput = document.createElement('p');
         passwordOutput.textContent = `Password: ${MaskPassword(password)}`;
 
+        //delete button to remove unwanted accounts
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('delete-button');
+
+        //adding an event listener for the button
+        deleteButton.addEventListener('click', () => 
+        {
+            //removing an account if the button is clicked
+            savedAccountContainer.remove(); 
+        })
+
         //appending the details to saved accounts section
 
         savedAccountContainer.appendChild(usernameOutput);
         savedAccountContainer.appendChild(passwordOutput);
+        savedAccountContainer.appendChild(deleteButton);
 
         const savedAccountsSection = document.querySelector('.accounts__content');
         savedAccountsSection.appendChild(savedAccountContainer);
