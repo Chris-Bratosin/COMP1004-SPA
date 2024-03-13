@@ -1,3 +1,4 @@
+const { get } = require("jquery");
 
 function MaskPassword(pass)
 {
@@ -14,42 +15,46 @@ function MaskPassword(pass)
 
 function saveAccount()
 {
-    
-}
-
-
-// ! THIS NEEDS TO BE FINISHED AND WORKINGS BY 28TH FEBRUARY
-/*
-function saveAccount()
-{
     const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;npg 
-    const accounts = saveAccount();
+    const password = document.getElementById('password').value;
+
     if (username && password)
     {
-            
-
         accounts.push({username, password});
         localStorage.setItem('accounts', JSON.stringify(accounts));
 
-        alert('Account saved successfully!');
+        alert('Account saved successfully');
         clearForm();
+        loadAccounts();
     }
+    else
+    {
+        alert('Username and password are required');
+    }
+}
 
-    savedAccounts.forEach((accounts, index) => 
+function loadAccounts()
+{
+    const accountList = document.getElementById('accountsList');
+    const accounts = getAccounts();
+    const savedAccounts = getAccounts();
+    
+    accountList.innerHTML = '';
+
+    savedAccounts.forEach((account, index) => 
     {
         const usernameItem = document.createElement('li');
-        usernameItem.textContent = `Username: ${accounts.username}`;
-        //appending the username to the list
-        accountsList.appendChild(usernameItem);
+        usernameItem.textContent = `Username: ${account.username}`
+        //appending the username  to the list
+        accountList.appendChild(usernameItem);
 
-        const passwordItem = document.createElement('li');
-        passwordItem.textContent = `Password: ${accounts.username}`;
-        //appending the username to the list
-        accountsList.appendChild(passwordItem);
-    });
+        const passwordItem = document.createElement('span');
+        passwordItem.textContent = `Password: ${account.password}`;
+        //appending the password to the list
+        accountList.appendChild(passwordItem);
+
+    })
 }
-*/
 
 
 /*Creating the color theme toggle
