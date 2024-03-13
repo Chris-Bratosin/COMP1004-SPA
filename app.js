@@ -15,45 +15,12 @@ function MaskPassword(pass)
 
 function saveAccount()
 {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username && password)
-    {
-        accounts.push({username, password});
-        localStorage.setItem('accounts', JSON.stringify(accounts));
-
-        alert('Account saved successfully');
-        clearForm();
-        loadAccounts();
-    }
-    else
-    {
-        alert('Username and password are required');
-    }
+   
 }
 
 function loadAccounts()
 {
-    const accountList = document.getElementById('accountsList');
-    const accounts = getAccounts();
-    const savedAccounts = getAccounts();
     
-    accountList.innerHTML = '';
-
-    savedAccounts.forEach((account, index) => 
-    {
-        const usernameItem = document.createElement('li');
-        usernameItem.textContent = `Username: ${account.username}`
-        //appending the username  to the list
-        accountList.appendChild(usernameItem);
-
-        const passwordItem = document.createElement('span');
-        passwordItem.textContent = `Password: ${account.password}`;
-        //appending the password to the list
-        accountList.appendChild(passwordItem);
-
-    })
 }
 
 
