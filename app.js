@@ -10,7 +10,93 @@ function MaskPassword(pass)
     return str
 }
 
+document.addEventListener('DOMContentLoaded', function ()
+{
+    loadAccounts();
+});
 
+//function to save the account to the Saved Accounts section
+function saveAccount()
+{
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username && password)
+    {
+        const accounts = getAccounts();
+
+        accounts.push({username, password});
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+
+        alert('Account has been saved');
+        clearForm();
+        loadAccounts();
+    }
+    else
+    {
+        alert('Please enter username and password');
+    }
+}
+
+function getAccounts()
+{
+    return JSON.parse(localStorage.getItem('accounts')) || [];
+}
+
+//function to load the account once the save account button has been clicked
+function loadAccounts()
+{
+    const accounts__list = document.getElementById('accounts__list');
+   
+    const accounts__content = getAccounts();
+
+    accounts__list.innerHTML = '';
+
+    accounts__content.forEach((account, index) => 
+    {
+        const usernameInput = document.createElement('li');
+        usernameInput.textContent = `Username: ${account.username}`;
+        //appending username to the list
+        accounts__list.appendChild(usernameInput);
+
+        const passwordInput = document.createElement('li');
+        passwordInput.textContent = `Password: ${account.password}`;
+        //appending password to the list
+        accounts__list.appendChild(passwordInput);
+
+
+        //creating a delete button to delete unwanted accounts 
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function()
+        {
+            deleteAccount(index);
+        });
+
+        deleteButton.classList.add('delete-button');
+        usernameInput.appendChild(deleteButton)
+    });
+}
+
+function deleteAccount(index)
+{
+    const accounts__content = getAccounts();
+
+    //remove the account at the specified index
+    accounts__content.splice(index, 1);
+
+    //update the local storage for account deletion
+    localStorage.getItem('accounts__content', JSON.stringify(accounts__content))
+
+    //reload the account list
+    loadAccounts();
+}
+
+function clearForm()
+{
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+}
 
 
 
