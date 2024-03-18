@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function ()
 });
 
 //function to save the account to the Saved Accounts section
-function saveAccount()
+/*function saveAccount()
 {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -42,6 +42,28 @@ function saveAccount()
             alert(passwordStrengthResult);
         }
         
+    }  
+    else
+    {
+        alert('Please enter username and password');
+    }
+}*/
+
+function saveAccount()
+{
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username && password)
+    {
+        const accounts = getAccounts();
+
+        accounts.push({username, password});
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+
+        alert('Account has been saved');
+        clearForm();
+        loadAccounts(); 
     }  
     else
     {
@@ -130,7 +152,7 @@ notify the user and will keep doing so until all tests have been passed, once
 the account is saved, it will send out an alert telling the user that they should
 change their password on the website to match it in the password manager*/
 
-function checkPasswordStrength(password)
+/*function checkPasswordStrength(password)
 {
     //checking the password for a minimum length:
     if (password.length < 12)
@@ -162,8 +184,8 @@ function checkPasswordStrength(password)
 
     /*notifying the user that the password has passed all strength checks, alongside
     suggesting to change password on actual website*/
-    return 'Password is now strong, make sure to apply changes the website this is for'
-}
+    //return 'Password is now strong, make sure to apply changes the website this is for'
+//}
 
 
 
