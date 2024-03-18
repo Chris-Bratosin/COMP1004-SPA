@@ -5,7 +5,7 @@ function MaskPassword(pass)
     let str = ""
     for (let index = 0; index < pass.length; index++)
     {
-        str = "*"
+        str += "*"
     }
     return str
 }
@@ -80,13 +80,22 @@ function loadAccounts()
 
 function deleteAccount(index)
 {
-    const accounts__content = getAccounts();
+    //using let as it will be changing it
+    let accounts = getAccounts();
 
-    //remove the account at the specified index
-    accounts__content.splice(index, 1);
+    //Filter out the account i don't want to have in the storage
+    accounts = accounts.filter((account, i) => 
+    {
+        //if this returns true, then it keeps the item, if it returns false, it is deleted from the array
+        //to remove the item with index i, return false if i is equal to index
+        //otherwise return true
+        return i !== index;
+    })
 
-    //update the local storage for account deletion
-    localStorage.getItem('accounts__content', JSON.stringify(accounts__content))
+    //update the local storage item
+    localStorage.setItem("accounts", JSON.stringify(accounts));
+    
+
 
     //reload the account list
     loadAccounts();
