@@ -11,12 +11,14 @@
 }
 */
 
+/*this is used to load the accounts before anything else so that it is ready to 
+be viewed first*/
 document.addEventListener('DOMContentLoaded', function ()
 {
     loadAccounts();
 });
 
-//function to save the account to the Saved Accounts section
+// ! Old saveAccount function (needs fixing before using again, see function below)
 /*function saveAccount()
 {
     const username = document.getElementById('username').value;
@@ -51,14 +53,17 @@ document.addEventListener('DOMContentLoaded', function ()
 
 function saveAccount()
 {
+    /*The const variables will get the id of the label inputs i created
+    and use them to push them to the local storage */
+    const website = document.getElementById('website').value
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if (username && password)
+    if (website && username && password)
     {
         const accounts = getAccounts();
 
-        accounts.push({username, password});
+        accounts.push({website, username, password});
         localStorage.setItem('accounts', JSON.stringify(accounts));
 
         alert('Account has been saved');
@@ -67,7 +72,7 @@ function saveAccount()
     }  
     else
     {
-        alert('Please enter username and password');
+        alert('Please enter website, username, and password');
     }
 }
 
@@ -76,7 +81,8 @@ function getAccounts()
     return JSON.parse(localStorage.getItem('accounts')) || [];
 }
 
-//function to load the account once the save account button has been clicked
+/*Creating a function that will take the inputs when Save Account, and display
+them in the Saved Accounts container*/
 function loadAccounts()
 {
     const accounts__list = document.getElementById('accounts__list');
@@ -86,16 +92,23 @@ function loadAccounts()
 
     accounts__content.forEach((account, index) => 
     {
-        const usernameInput = document.createElement('li');
+        //creating a list item so that the input is outputted as a list
+        const websiteInput = document.createElement('li');
+        websiteInput.textContent = `Website: ${account.website}`;
+        //appending website to the list
+        accounts__list.appendChild(websiteInput);
+
+        //creating a list item so that the input is outputted as a list
+        const usernameInput = document.createElement('ul');
         usernameInput.textContent = `Username: ${account.username}`;
         //appending username to the list
         accounts__list.appendChild(usernameInput);
 
-        const passwordInput = document.createElement('li');
+        //creating a list item so that the input is outputted as a list
+        const passwordInput = document.createElement('ul');
         passwordInput.textContent = `Password: ${account.password}`;
         //appending password to the list
         accounts__list.appendChild(passwordInput);
-
 
         //creating a delete button to delete unwanted accounts 
         const deleteButton = document.createElement('button');
@@ -104,7 +117,8 @@ function loadAccounts()
         {
             deleteAccount(index);
         });
-
+        
+        //when an account is created, so is a new delete button to be assigned to that account
         deleteButton.classList.add('delete-button');
         usernameInput.appendChild(deleteButton)
     });
@@ -140,6 +154,7 @@ function deleteAccount(index)
 has been saved for quality of life and to allow a new input after*/ 
 function clearForm()
 {
+    document.getElementById('website').value = '';
     document.getElementById('username').value = '';
     document.getElementById('password').value = '';
 }
@@ -253,7 +268,7 @@ button.addEventListener("click", (event) =>
 
 
 
-// TODO: PASSWORD STRENGTH CHECKING
-// TODO: ACCOUNT DELETION BUTTON
-// TODO: FILE SAVING AND FILE OPENING USING JSON 
-// TODO: ZOOM TOGGLE 
+// TODO: PASSWORD STRENGTH CHECKING (in progress)
+// TODO: ACCOUNT DELETION BUTTON (done)
+// TODO: FILE SAVING AND FILE OPENING USING JSON (done)
+// TODO: ZOOM TOGGLE (in progress)
