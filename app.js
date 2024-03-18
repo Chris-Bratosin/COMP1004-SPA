@@ -1,6 +1,6 @@
 //const { get } = require("jquery");
 
-function MaskPassword(pass)
+/*function MaskPassword(pass)
 {
     let str = ""
     for (let index = 0; index < pass.length; index++)
@@ -9,6 +9,7 @@ function MaskPassword(pass)
     }
     return str
 }
+*/
 
 document.addEventListener('DOMContentLoaded', function ()
 {
@@ -23,15 +24,25 @@ function saveAccount()
 
     if (username && password)
     {
-        const accounts = getAccounts();
+        const passwordStrengthResult = checkPasswordStrength(password);
+    
+        if(passwordStrengthResult === 'Password is strong')
+        {
+            const accounts = getAccounts();
 
-        accounts.push({username, password});
-        localStorage.setItem('accounts', JSON.stringify(accounts));
+            accounts.push({username, password});
+            localStorage.setItem('accounts', JSON.stringify(accounts));
 
-        alert('Account has been saved');
-        clearForm();
-        loadAccounts();
-    }
+            alert('Account has been saved');
+            clearForm();
+            loadAccounts();
+        }
+        else
+        {
+            alert(passwordStrengthResult);
+        }
+        
+    }  
     else
     {
         alert('Please enter username and password');
@@ -47,9 +58,8 @@ function getAccounts()
 function loadAccounts()
 {
     const accounts__list = document.getElementById('accounts__list');
-   
     const accounts__content = getAccounts();
-
+    
     accounts__list.innerHTML = '';
 
     accounts__content.forEach((account, index) => 
@@ -78,6 +88,10 @@ function loadAccounts()
     });
 }
 
+
+/*creating function to allow the delete button to delete an account once it has been pressed.
+When the button is clicked, the account will be checked and filtered and removed from the 
+local storage.*/ 
 function deleteAccount(index)
 {
     //using let as it will be changing it
@@ -94,19 +108,62 @@ function deleteAccount(index)
 
     //update the local storage item
     localStorage.setItem("accounts", JSON.stringify(accounts));
-    
-
 
     //reload the account list
     loadAccounts();
 }
 
+
+/*creating a function to clear the username and password input box after an account
+has been saved for quality of life and to allow a new input after*/ 
 function clearForm()
 {
     document.getElementById('username').value = '';
     document.getElementById('password').value = '';
 }
 
+
+
+/*creating a function to check the strength of implemented password following
+the criteria set using regex below. If it doesn't meet the requirements, it will
+notify the user and will keep doing so until all tests have been passed, once
+the account is saved, it will send out an alert telling the user that they should
+change their password on the website to match it in the password manager*/
+
+function checkPasswordStrength(password)
+{
+    //checking the password for a minimum length:
+    if (password.length < 12)
+    {
+        //if the length is less than 12, alert an error
+        return 'Error: Password should be at least 12 characters long';
+    }
+
+    //checking for at least 1 number:
+    if (!/\d/.test(password))
+    {
+        //if there is no number in the password, alert an error
+        return 'Error: Password should include at least one number';
+    }
+
+    //checking for at least 1 special character:
+    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password))
+    {
+        //if there is no special character, alert an error
+        return 'Error: Password should include at least one special character';
+    }
+
+    //checking for at least one capitalized letter:
+    if (!/[A-Z]/.test(password))
+    {
+        //if there is no capitalized letter, alert an error
+        return 'Error: Password should include at least one capitalized letter';
+    }
+
+    /*notifying the user that the password has passed all strength checks, alongside
+    suggesting to change password on actual website*/
+    return 'Password is now strong, make sure to apply changes the website this is for'
+}
 
 
 
