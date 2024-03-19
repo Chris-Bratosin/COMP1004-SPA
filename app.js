@@ -41,7 +41,7 @@ function saveAccount()
             accounts.push({website, username, password});
             localStorage.setItem('accounts', JSON.stringify(accounts));
 
-            alert('Account has been saved');
+            alert('Account has been saved, if requirements are not initially met, consider changing the password on the actual website too');
             clearForm();
             loadAccounts();
         } 
