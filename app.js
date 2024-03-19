@@ -113,6 +113,9 @@ When the button is clicked, the account will be checked and filtered and removed
 local storage.*/ 
 function deleteAccount(index)
 {
+    //asking user for confirmation before deleting account to avoid accidental deletion
+    if(confirm('Are you sure you want to delete this account?'))
+    {
     //using let as it will be changing it
     let accounts = getAccounts();
 
@@ -130,6 +133,7 @@ function deleteAccount(index)
 
     //reload the account list
     loadAccounts();
+    }
 }
 
 //!---------------------------------------------------------------------------------------------------------------!//
@@ -260,7 +264,7 @@ button.addEventListener("click", (event) =>
 //!---------------------------------------------------------------------------------------------------------------!//
 
 
-// TODO: PASSWORD STRENGTH CHECKING (in progress)
+// TODO: PASSWORD STRENGTH CHECKING (done)
 // TODO: ACCOUNT DELETION BUTTON (done)
 // TODO: FILE SAVING AND FILE OPENING USING JSON (done)
-// TODO: ZOOM TOGGLE (in progress)
+// TODO: ZOOM TOGGLE (done)
