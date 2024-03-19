@@ -11,6 +11,8 @@
 }
 */
 
+//!---------------------------------------------------------------------------------------------------------------!//
+
 /*this is used to load the accounts before anything else so that it is ready to 
 be viewed first*/
 document.addEventListener('DOMContentLoaded', function ()
@@ -18,38 +20,7 @@ document.addEventListener('DOMContentLoaded', function ()
     loadAccounts();
 });
 
-// ! Old saveAccount function (needs fixing before using again, see function below)
-/*function saveAccount()
-{
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username && password)
-    {
-        const passwordStrengthResult = checkPasswordStrength(password);
-    
-        if(passwordStrengthResult === 'Password is strong')
-        {
-            const accounts = getAccounts();
-
-            accounts.push({username, password});
-            localStorage.setItem('accounts', JSON.stringify(accounts));
-
-            alert('Account has been saved');
-            clearForm();
-            loadAccounts();
-        }
-        else
-        {
-            alert(passwordStrengthResult);
-        }
-        
-    }  
-    else
-    {
-        alert('Please enter username and password');
-    }
-}*/
+//!---------------------------------------------------------------------------------------------------------------!//
 
 function saveAccount()
 {
@@ -61,14 +32,23 @@ function saveAccount()
 
     if (website && username && password)
     {
-        const accounts = getAccounts();
+        const passwordStrengthResult = checkPasswordStrength(password);
 
-        accounts.push({website, username, password});
-        localStorage.setItem('accounts', JSON.stringify(accounts));
+        if(passwordStrengthResult == 'Password is strong')
+        {
+            const accounts = getAccounts();
 
-        alert('Account has been saved');
-        clearForm();
-        loadAccounts(); 
+            accounts.push({website, username, password});
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+
+            alert('Account has been saved');
+            clearForm();
+            loadAccounts();
+        } 
+        else
+        {
+            alert(passwordStrengthResult);
+        }
     }  
     else
     {
@@ -80,6 +60,8 @@ function getAccounts()
 {
     return JSON.parse(localStorage.getItem('accounts')) || [];
 }
+
+//!---------------------------------------------------------------------------------------------------------------!//
 
 /*Creating a function that will take the inputs when Save Account, and display
 them in the Saved Accounts container*/
@@ -124,6 +106,7 @@ function loadAccounts()
     });
 }
 
+//!---------------------------------------------------------------------------------------------------------------!//
 
 /*creating function to allow the delete button to delete an account once it has been pressed.
 When the button is clicked, the account will be checked and filtered and removed from the 
@@ -149,6 +132,7 @@ function deleteAccount(index)
     loadAccounts();
 }
 
+//!---------------------------------------------------------------------------------------------------------------!//
 
 /*creating a function to clear the username and password input box after an account
 has been saved for quality of life and to allow a new input after*/ 
@@ -159,7 +143,7 @@ function clearForm()
     document.getElementById('password').value = '';
 }
 
-
+//!---------------------------------------------------------------------------------------------------------------!//
 
 /*creating a function to check the strength of implemented password following
 the criteria set using regex below. If it doesn't meet the requirements, it will
@@ -167,7 +151,7 @@ notify the user and will keep doing so until all tests have been passed, once
 the account is saved, it will send out an alert telling the user that they should
 change their password on the website to match it in the password manager*/
 
-/*function checkPasswordStrength(password)
+function checkPasswordStrength(password)
 {
     //checking the password for a minimum length:
     if (password.length < 12)
@@ -199,15 +183,16 @@ change their password on the website to match it in the password manager*/
 
     /*notifying the user that the password has passed all strength checks, alongside
     suggesting to change password on actual website*/
-    //return 'Password is now strong, make sure to apply changes the website this is for'
-//}
+    return 'Password is strong';
+}
 
 
 
-
+//!---------------------------------------------------------------------------------------------------------------!//
 /*Creating the color theme toggle
 first going to find the system setting for the user to have a default theme (dark/light) and if button is clicked
 switch to the opposite theme and revert if clicked again*/
+//!---------------------------------------------------------------------------------------------------------------!//
 
 function themeSetting({localStorageTheme, systemSettingsDark})
 {
@@ -224,6 +209,8 @@ function themeSetting({localStorageTheme, systemSettingsDark})
     return "light";
 }
 
+//!---------------------------------------------------------------------------------------------------------------!//
+
 /*creating function to update the buttons text when clicked so that it matches with what it should be.
 e.g. when dark is on, button should say 'switch to light' and vice versa with light, it should be
 'switch to dark*/ 
@@ -235,12 +222,16 @@ function updateButtonText({buttonEl, isDark})
     buttonEl.innerText = changeSetting;
 }
 
+//!---------------------------------------------------------------------------------------------------------------!//
+
 /* Creating function to update the html tag i set earlier after the lang=en tag.*/
 
 function updateHtmlTag({theme})
 {
     document.querySelector("html").setAttribute("data-theme", theme);
 }
+
+//!---------------------------------------------------------------------------------------------------------------!//
 
 /*finally, going to get the system settings for when the page loads then figure the current site settings
 and update the theme depending on what the users needs are. going to make use of an event listener for when 
@@ -266,6 +257,7 @@ button.addEventListener("click", (event) =>
         currentThemeSetting = newTheme;
 });
 
+//!---------------------------------------------------------------------------------------------------------------!//
 
 
 // TODO: PASSWORD STRENGTH CHECKING (in progress)

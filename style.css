@@ -148,7 +148,6 @@ body
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 700;
-    
     padding-top: 10px;
     background-color: #131313;
     background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
@@ -163,6 +162,13 @@ body
 {
     font-size: 1rem;
     margin-top: -15px;
+}
+
+#accounts__list
+{
+    font-size: 1rem;
+    font-weight: 350;
+    text-decoration: none;
 }
 
 .delete-button
