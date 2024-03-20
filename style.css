@@ -2,26 +2,28 @@
 {
     font-family: 'Kumbh Sans', sans-serif;
 }
-/*
-body
-{
-    background-color: rgba(0, 0, 35, 40);
-}
-*/
 
 /*! ----MAIN COMPARTMENT (PASSWORD MANAGER) CSS SECTION---- */
+
+
+
+
+
+
 
 .main
 {
     background-color: lightgray;
     border-radius: 8px;
+    
 }
 
 .main__container
 {
-    max-width: 600px;
+    max-width: 1200px;
     max-height: 600px;
-    height: 345px;
+    height: 350px;
+    width: 1200px;
     padding-left: 0.5rem;
     margin-bottom: 2rem;
     text-decoration: none;
@@ -61,10 +63,98 @@ body
     font-weight: 600;
 }
 
+[data-theme="light"]
+{
+    --color-bg: #ffffff;
+    --color-fg: #4e4d4d;
+}
+
+[data-theme="dark"]
+{
+    --color-bg: #4e4d4d;
+    --color-fg: #131313;
+}
+
+body 
+{
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    min-height: 100vh;
+    width: 600px;
+    margin-left: 475px;
+}
+
+
+
+
+
+
+
+/*! ----SAVED ACCOUNTS CSS SECTION---- */
+
+.accounts
+{
+    background-color: lightgray;
+    border-radius: 8px;
+    
+}
+
+.accounts__container
+{
+    max-width: 600px;
+    max-height: 5000px;
+    padding-left: 0.5rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    
+}
+
+#accounts__content h2
+{
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    padding-top: 10px;
+    background-color: #131313;
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+#accounts__content p
+{
+    font-size: 1rem;
+    margin-top: -15px;
+}
+
+#accounts__list
+{
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 350;
+    text-decoration: none;
+    
+}
+
+
+
+
+
+
+/* ! ALL BUTTONS ARE HERE */
+
+/* ! SAVE ACCOUNT BUTTON */
 
 .main__button
 {
-    font-size: 1rem;
+    font-size: .90rem;
     font-weight: 700;
     padding: 8px 30px;
     border: none;
@@ -81,12 +171,75 @@ body
 {
     background-color: lightgreen;
     transition: all 0.3 ease;
+    scale: 1.01;
 }
 
 .main__button:active
 {
     background-color: darkgreen;
+    scale: 0.99;
 }
+
+/* ! DELETE BUTTON */
+
+.delete-button
+{
+    font-size: .90rem;
+    font-weight: 700;
+    padding: 5px 20px;
+    color: white;
+    background-color: rgb(215, 94, 94);;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 100px;
+    transition: all 0.35s;
+    
+}
+
+.delete-button:hover
+{
+    background-color: rgb(215, 94, 94);
+    transition: all 0.3 ease;
+    scale: 1.01;
+}
+
+.delete-button:active
+{
+    background-color: rgb(226, 44, 44);
+    scale: 0.99;
+}
+
+/* ! LIGHT/DARK MODE BUTTON */
+
+.color__theme
+{
+    font-size: .90rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    transition: all 0.35s;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--color-fg);
+}   
+
+.color__theme:hover
+{
+    background-color: lightgreen;
+    transition: all 0.3 ease;
+    scale: 1.01;
+}
+
+.color__theme:active
+{
+    background-color: darkgreen;
+    scale: 0.99;
+}
+
+/* ! ZOOM LEVEL DROPDOWN BUTTON */
 
 .dropdown
 {
@@ -123,114 +276,32 @@ body
     background-color: black;
 }
 
+/* ! IMPORT/EXPORT DROPDOWN BUTTON */
 
-[data-theme="light"]
+.export__import
 {
-    --color-bg: #ffffff;
-    --color-fg: #4e4d4d;
-}
-
-[data-theme="dark"]
-{
-    --color-bg: #4e4d4d;
-    --color-fg: #131313;
-}
-
-body 
-{
-    background-color: var(--color-bg);
-    color: var(--color-fg);
-    min-height: 100vh;
-    width: 600px;
-    margin-left: 475px;
-}
-
-.color__theme
-{
-    font-size: 1rem;
+    font-size: .90rem;
     font-weight: 700;
-    padding: 0.5rem 1rem;
-    transition: all var(--global-transition-time) ease-in-out;
+    padding: 8px 30px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-    color: var(--color-fg);
-}   
-
-
-
-
-
-
-/*! ----SAVED ACCOUNTS CSS SECTION---- */
-
-.accounts
-{
-    background-color: lightgray;
-    border-radius: 8px;
-}
-
-.accounts__container
-{
-    max-width: 600px;
-    max-height: 5000px;
-    padding-left: 0.5rem;
-    margin-bottom: 2rem;
-    text-decoration: none;
-}
-
-#accounts__content h2
-{
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-weight: 700;
-    padding-top: 10px;
-    background-color: #131313;
-    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
-
-#accounts__content p
-{
-    font-size: 1rem;
-    margin-top: -15px;
-}
-
-#accounts__list
-{
-    font-size: 1rem;
-    font-weight: 350;
-    text-decoration: none;
-}
-
-.delete-button
-{
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 5px 20px;
     color: #131313;
-    border: none;
-    border-radius: 4px;
-    position: relative;
+    margin-top: 37.5px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-left: 100px;
+    position: relative;
     transition: all 0.35s;
+    outline: none;
 }
 
-.delete-button:hover
+.export__import:hover
 {
     background-color: lightgreen;
     transition: all 0.3 ease;
+    scale: 1.01;
 }
 
-.delete-button:active
+.export__import:active
 {
     background-color: darkgreen;
+    scale: 0.99;
 }
-

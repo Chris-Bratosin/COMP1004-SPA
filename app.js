@@ -263,8 +263,3 @@ button.addEventListener("click", (event) =>
 
 //!---------------------------------------------------------------------------------------------------------------!//
 
-
-// TODO: PASSWORD STRENGTH CHECKING (done)
-// TODO: ACCOUNT DELETION BUTTON (done)
-// TODO: FILE SAVING AND FILE OPENING USING JSON (done)
-// TODO: ZOOM TOGGLE (done)

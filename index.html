@@ -43,10 +43,14 @@
             <button class="main__button" onclick="saveAccount()">Save Account</button>
         
             
-            <!-- ! Light/Dark theme switcher-->
-            <button type="button" class="color__theme"
-            data-theme-toggle 
-            aria-label="Change to light theme">Change to light theme</button>   
+            <!-- ! Light/Dark theme switcher -->
+            <button type="button" class="color__theme" data-theme-toggle aria-label="Change to light theme">Change to light theme</button> 
+            
+            <!-- ! Export File Button --> <!-- TODO finish this -->
+            <button aria-label="Export Profile" class="export__import" title="Export Profile" onclick="ExportProfile()">Export</button>
+
+            <!-- ! Export File Button --> <!-- TODO finish this -->
+            <button aria-label="Import Profile" class="export__import" title="Import Profile" onclick="ImportProfile()">Import</button>
 
             <div class="dropdown">
                 <button>Zoom Levels</button>
@@ -65,6 +69,7 @@
     </div>
     
     <!-- ! ACCOUNTS SECTION OF MAIN PAGE --> 
+    
 
     <div class="accounts">
         <div class="accounts__container">
