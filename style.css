@@ -143,6 +143,21 @@ body
     
 }
 
+#accounts__list li
+{
+    list-style: ordered;
+    padding: 12px;
+    color: black;
+    font-weight: 450px;
+}
+
+#accounts__list ul
+{
+    padding: 0px;
+    margin: 0px;
+    color: black;
+    font-weight: 350;
+}
 
 
 
@@ -191,10 +206,9 @@ body
     background-color: rgb(215, 94, 94);;
     border: none;
     border-radius: 4px;
-    position: relative;
+    position: absolute;
     cursor: pointer;
-    margin-top: 10px;
-    margin-left: 100px;
+    left: 950px;
     transition: all 0.35s;
     
 }
@@ -251,7 +265,7 @@ body
 {
     display: none;
     position: absolute;
-    width: 100%;
+    width: 100px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
