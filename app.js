@@ -298,3 +298,46 @@ function ExportProfile()
     loadAccounts();
 }
 
+//creating function to import the account data to the accounts section
+function ImportProfile()
+{
+    const importP = document.createElement('importP');
+    //setting the type for importP to file to allow for the file selection
+    importP.type = 'file';
+    //making iy only accept json files
+    importP.accept = 'json;'
+
+    //creating event handler for when the file is selected using the importP element
+    importP.onchange = function(event)
+    {
+
+        //getting the data from the event object
+        const file = event.target.files[0];
+
+        //creating a FileReader object so that the contents can be read
+        const reader = new FileReader();
+
+
+        //event handler for FileReader when it has loaded the contents of the selected file
+        reader.onload = function(e)
+        {
+            const contents = e.target.result;
+            const importedAccounts = JSON.parse(contents);
+
+            //merging the imported accounts with existing accounts
+            //getting the existing accounts from the local storage
+            const existingAccounts = getAccounts();
+
+            //merge the imported accounts with the existing accounts and store the merged onces back into local storage
+            const mergedAccounts = existingAccounts.concat(importedAccounts);
+            localStorage.setItem('accounts', JSON.stringify(mergedAccounts));
+
+            //reloading the accounts list
+            loadAccounts();
+        }
+        //read the contents of the file being imported as text only
+        reader.readAsText(file);
+    };
+    //trigger events above when import has been clicked
+    importP.click();
+}
