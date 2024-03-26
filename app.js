@@ -263,7 +263,38 @@ button.addEventListener("click", (event) =>
 
 //!---------------------------------------------------------------------------------------------------------------!//
 
+//creating function to export the accounts data to a flat file (will be called accounts.json)
 function ExportProfile()
 {
-    
+    //calling getAccounts function
+    const accounts = getAccounts();
+
+    //converting the accounts data to a JavaScript string to allow for it to be sent 
+    const data = JSON.stringify(accounts);
+
+    //creating blob storage to allow exporting the JSON
+    const blob = new Blob([data], {type: 'application/json'});
+
+    //creating string containing the URL of the given parameter, in this case, blob
+    const url = URL.createObjectURL(blob);
+
+
+    //creating a temporary anchor element so that it can download a json file
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'accounts.json';
+
+    //appending data specified to the file
+    document.body.appendChild(a);
+    //a.click means that the above happens when 'export' is clicked
+    a.click();
+    document.body.removeChild(a);
+
+    //using revoke to clear up resources and preventing memory leaks
+    URL.revokeObjectURL(url);
+
+    //clearing saved accounts section when data is exported
+    localStorage.removeItem('accounts');
+    loadAccounts();
 }
+
