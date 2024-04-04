@@ -10,7 +10,13 @@ Finally, the application will make use of password strength checking to ensure t
 
 My project vision is to provide users with an effective, intuitive, and simple account management system that ensure they are using strong and effective passwords as studies show that an alarming amount of users don't actually use strong passwords and often struggle to create them, not only this, most users are actually lazy and even though most websites provide them with strong password generation, they will often not use it and reuse passwords over and over again across mulitple websites making them really vulnerable to cyber crimes when it comes to data breaches, they are at risks of their accounts being comprimised. My project keeps this in mind and hopes to make a change to how users make passwords and to at least make them aware of the risks of re-using passwords and not using strong passwords.
 
+Below is the poster for my project
+![image](https://github.com/Chris-Bratosin/COMP1004-SPA/assets/146179390/b755ea1c-ca0d-4729-a8cd-f4d641b5774e)
+
+
+
 
 Below is my Kanban Board, i also have one on the document submitted however its on a different website, in case it doesnt show anything, i created one on GitHub too.
 
 https://github.com/users/Chris-Bratosin/projects/2
+
