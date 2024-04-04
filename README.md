@@ -16,7 +16,6 @@ Below is the poster for my project
 
 
 
-Below is my Kanban Board, i also have one on the document submitted however its on a different website, in case it doesnt show anything, i created one on GitHub too.
-
+Below is the link to my GitHub Kanban Board, I have one created on TeamHood too however, I'am unsure if the link will display it so I created it on GitHub also
 https://github.com/users/Chris-Bratosin/projects/2
 
