@@ -1,4 +1,4 @@
-In this project i will be creating a password manage Single Webpage Application which makes use of various programming elements such as HTML, CSS, Javascript, and JSON. 
+In this project i will be creating a password manager Single Webpage Application which makes use of various programming elements such as HTML, CSS, Javascript, and JSON. 
 
 The user will be able to input the website for which the account will be, then their username and password which will then be taken and outputted toa seperate 'Saved Accounts' section in a nicely organised list effecitvely displaying the users details for each account. they will also be provided with a delete button for each account incase they no longer need it, to ensure that there is no accidental deletion of accounts, each button will display a confirmation request before deleting the account to avoid any accidental deletion.
 
