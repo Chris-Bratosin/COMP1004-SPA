@@ -6,15 +6,12 @@
 /*! ----MAIN COMPARTMENT (PASSWORD MANAGER) CSS SECTION---- */
 
 
-
-
-
-
-
 .main
 {
     background-color: lightgray;
     border-radius: 8px;
+    position: relative;
+    bottom: 13px;
     
 }
 
@@ -22,7 +19,7 @@
 {
     max-width: 1200px;
     max-height: 600px;
-    height: 350px;
+    height: 430px;
     width: 1200px;
     padding-left: 0.5rem;
     margin-bottom: 2rem;
@@ -34,7 +31,7 @@
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 700;
-    padding-top: 10px;
+    padding: 5px;
     background-color: #131313;
     background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
     background-size: 100%;
@@ -47,21 +44,28 @@
 
 .main__content p
 {
-    font-size: 1rem;
-    margin-top: -15px;
+    font-size: 1.35rem;
+    margin-top: -17px;
+}
+
+.main__content li
+{
+    font-size: 1.05rem;
 }
 
 .main__content label
 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 2px;
     margin-top: 20px;
     justify-content: center;
     align-items: center;
     font-weight: 600;
 }
+
+
 
 [data-theme="light"]
 {
@@ -96,17 +100,17 @@ body
 {
     background-color: lightgray;
     border-radius: 8px;
-    
+    position: relative;
+    bottom: 40px;
 }
 
 .accounts__container
 {
     max-width: 600px;
     max-height: 5000px;
-    padding-left: 0.5rem;
-    margin-bottom: 2rem;
+    padding: 5px;
+    padding-top: -0px;
     text-decoration: none;
-    
 }
 
 #accounts__content h2
@@ -114,7 +118,7 @@ body
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 700;
-    padding-top: 10px;
+    padding: 5px;
     background-color: #131313;
     background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
     background-size: 100%;
@@ -125,15 +129,9 @@ body
     -moz-text-fill-color: transparent;
 }
 
-#accounts__content p
-{
-    font-size: 1rem;
-    margin-top: -15px;
-}
-
 #accounts__list
 {
-    padding: 10px 18px;
+    padding: -5px 18px;
     border-radius: 8px;
     border: none;
     background-color: #FFFFFF;
@@ -169,9 +167,9 @@ body
 
 .main__button
 {
-    font-size: .90rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    padding: 8px 30px;
+    padding: 8px 20px;
     border: none;
     border-radius: 4px;
     color: #131313;
@@ -199,16 +197,16 @@ body
 
 .delete-button
 {
-    font-size: .90rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    padding: 5px 20px;
+    padding: 6px 25px;
     color: white;
     background-color: rgb(215, 94, 94);;
     border: none;
     border-radius: 4px;
     position: absolute;
     cursor: pointer;
-    left: 950px;
+    left: 455px;
     transition: all 0.35s;
     
 }
@@ -230,9 +228,9 @@ body
 
 .color__theme
 {
-    font-size: .90rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    padding: 0.5rem 1rem;
+    padding: 8px 10px;
     transition: all 0.35s;
     border: none;
     border-radius: 4px;
@@ -258,7 +256,7 @@ body
 .dropdown
 {
     margin-left: 490px;
-    margin-top: -325px;
+    margin-top: -400px;
 }
 
 .dropdown-content
@@ -294,9 +292,9 @@ body
 
 .export__import
 {
-    font-size: .90rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    padding: 8px 30px;
+    padding: 8px 10px;
     border: none;
     border-radius: 4px;
     color: #131313;

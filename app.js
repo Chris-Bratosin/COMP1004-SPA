@@ -307,7 +307,7 @@ function ImportProfile()
     //making iy only accept json files
     input.accept = '.json';
 
-    //creating event handler for when the file is selected using the importP elsement
+    //creating event handler for when the file is selected using the importP element
     input.onchange = function(event)
     {
         //getting the data from the event object
