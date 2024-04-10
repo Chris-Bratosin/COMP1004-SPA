@@ -3,8 +3,9 @@
     font-family: 'Kumbh Sans', sans-serif;
 }
 
-/*! ----MAIN COMPARTMENT (PASSWORD MANAGER) CSS SECTION---- */
 
+
+/*! ----MAIN COMPARTMENT (PASSWORD MANAGER) CSS SECTION---- */
 
 .main
 {
@@ -67,6 +68,8 @@
 
 
 
+/* ! Light/Dark Theme CSS */
+
 [data-theme="light"]
 {
     --color-bg: #ffffff;
@@ -87,10 +90,6 @@ body
     width: 600px;
     margin-left: 475px;
 }
-
-
-
-
 
 
 
@@ -159,8 +158,6 @@ body
 
 
 
-
-
 /* ! ALL BUTTONS ARE HERE */
 
 /* ! SAVE ACCOUNT BUTTON */
@@ -193,6 +190,8 @@ body
     scale: 0.99;
 }
 
+
+
 /* ! DELETE BUTTON */
 
 .delete-button
@@ -224,6 +223,8 @@ body
     scale: 0.99;
 }
 
+
+
 /* ! LIGHT/DARK MODE BUTTON */
 
 .color__theme
@@ -250,6 +251,8 @@ body
     background-color: darkgreen;
     scale: 0.99;
 }
+
+
 
 /* ! ZOOM LEVEL DROPDOWN BUTTON */
 
@@ -287,6 +290,8 @@ body
     color: #FFFFFF;
     background-color: black;
 }
+
+
 
 /* ! IMPORT/EXPORT DROPDOWN BUTTON */
 

@@ -1,16 +1,3 @@
-//const { get } = require("jquery");
-
-/*function MaskPassword(pass)
-{
-    let str = ""
-    for (let index = 0; index < pass.length; index++)
-    {
-        str += "*"
-    }
-    return str
-}
-*/
-
 //!---------------------------------------------------------------------------------------------------------------!//
 
 /*this is used to load the accounts before anything else so that it is ready to 
