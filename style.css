@@ -137,6 +137,8 @@ body
     font-size: 1.2rem;
     font-weight: 350;
     text-decoration: none;
+    max-height: 300px;
+    overflow-y: scroll;
     
 }
 
@@ -203,10 +205,11 @@ body
     background-color: rgb(215, 94, 94);;
     border: none;
     border-radius: 4px;
-    position: absolute;
+    position: relative;
     cursor: pointer;
-    left: 455px;
+    left: 250px;
     transition: all 0.35s;
+    
     
 }
 
