@@ -259,13 +259,17 @@ function ExportProfile()
     //converting the accounts data to a JavaScript string to allow for it to be sent 
     const data = JSON.stringify(accounts);
 
+
+    //Encrypting the JSON user data before exporting it
+    const encryptedData = CryptoJS.AES.encrypt(data, 'secret_key').toString();
+
     //creating blob storage to allow exporting the JSON
     const blob = new Blob([data], {type: 'application/json'});
 
     //creating string containing the URL of the given parameter, in this case, blob
     const url = URL.createObjectURL(blob);
 
-
+    
     //creating a temporary anchor element so that it can download a json file
     const a = document.createElement('a');
     a.href = url;
@@ -306,7 +310,13 @@ function ImportProfile()
         //event handler for FileReader when it has loaded the contents of the selected file
         reader.onload = function(e)
         {
-            const contents = e.target.result;
+
+            const encryptedContents = e.target.result;
+
+            //Decrypt the data when reading the JSON file
+            const bytes = CryptoJS.AES.decrypt(encryptedContents, 'secret_key');
+            const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+            
             const importedAccounts = JSON.parse(contents);
 
             //merging the imported accounts with existing accounts
