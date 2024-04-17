@@ -286,6 +286,7 @@ function ExportProfile()
 
     //clearing saved accounts section when data is exported
     localStorage.removeItem('accounts');
+    alert("DATA HAS BEEN ENCRYPTED");
     loadAccounts();
 }
 
