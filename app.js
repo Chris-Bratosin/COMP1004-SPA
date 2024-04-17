@@ -28,7 +28,7 @@ function saveAccount()
             accounts.push({website, username, password});
             localStorage.setItem('accounts', JSON.stringify(accounts));
 
-            alert('Account has been saved, if requirements are not initially met, consider changing the password on the actual website too');
+            alert('The data being collected will not be shared with anyone, it is private to yourself and can be deleted at the click of a button.');
             clearForm();
             loadAccounts();
         } 
