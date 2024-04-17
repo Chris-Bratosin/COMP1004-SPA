@@ -317,7 +317,7 @@ function ImportProfile()
             const bytes = CryptoJS.AES.decrypt(encryptedContents, 'secret_key');
             const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
 
-            const importedAccounts = JSON.parse(contents);
+            const importedAccounts = JSON.parse(decryptedData);
 
             //merging the imported accounts with existing accounts
             //getting the existing accounts from the local storage
