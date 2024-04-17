@@ -264,7 +264,7 @@ function ExportProfile()
     const encryptedData = CryptoJS.AES.encrypt(data, 'secret_key').toString();
 
     //creating blob storage to allow exporting the JSON
-    const blob = new Blob([data], {type: 'application/json'});
+    const blob = new Blob([encryptedData], {type: 'application/json'});
 
     //creating string containing the URL of the given parameter, in this case, blob
     const url = URL.createObjectURL(blob);
@@ -316,7 +316,7 @@ function ImportProfile()
             //Decrypt the data when reading the JSON file
             const bytes = CryptoJS.AES.decrypt(encryptedContents, 'secret_key');
             const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-            
+
             const importedAccounts = JSON.parse(contents);
 
             //merging the imported accounts with existing accounts
