@@ -326,3 +326,4 @@ function ImportProfile()
     //trigger events above when import has been clicked
     input.click();
 }
+
